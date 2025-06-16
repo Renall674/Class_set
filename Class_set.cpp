@@ -24,30 +24,22 @@ public:
 			}
 		}
 	}
-	size_t size() {
+	size_t size() const {
 		return kontainer.size();
 	}
-	bool empty() {
-		if (kontainer.empty()) {
-			return true;
-		}
-		else {
-			return false;
-		}
+	bool empty() const {
+		return kontainer.empty();
 	}
-	bool count(T value) {
-		if (find(kontainer.begin(), kontainer.end(), value) == kontainer.end()) {
-			return false;
-		}
-		else {
-			return true;
-		}
+	bool count(T value) const {
+		return binary_search(kontainer.begin(), kontainer.end(), value);
 	}
-	void print() {
+	void print() const {
 		for (int elem : kontainer) {
 			cout << elem << endl;
 		}
 	}
+        auto begin() const { return kontainer.begin(); }
+        auto end() const { return kontainer.end(); }
 private:
 	vector<T> kontainer;
 };
@@ -59,5 +51,8 @@ int main() {
 	cout << a.size() << endl;
 	cout << a.empty() << endl;
 	cout << a.count(20) << endl;
-	a.print();
+	//a.print();
+	for (int b : a) {
+		cout << b << endl;
+	}
 }
