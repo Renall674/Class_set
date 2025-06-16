@@ -38,6 +38,9 @@ public:
 			cout << elem << endl;
 		}
 	}
+        void clear() const {
+		kontainer.clear();
+	}
         auto begin() const { return kontainer.begin(); }
         auto end() const { return kontainer.end(); }
 private:
@@ -51,6 +54,7 @@ int main() {
 	cout << a.size() << endl;
 	cout << a.empty() << endl;
 	cout << a.count(20) << endl;
+	//a.clear();
 	//a.print();
 	for (int b : a) {
 		cout << b << endl;
